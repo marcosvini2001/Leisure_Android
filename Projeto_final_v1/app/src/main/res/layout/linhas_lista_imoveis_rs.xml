@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="@color/white"
+tools:context=".view.AcessoUsuario">
+
+<androidx.viewpager2.widget.ViewPager2
+    android:id="@+id/pagerMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" />
+
+<androidx.cardview.widget.CardView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginBottom="8dp"
+    android:elevation="5dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:translationZ="10dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="5dp" />
+
+<!-- Banners promocionais -->
+<ImageView
+    android:id="@+id/bannerPromotion"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:padding="8dp"
+    android:scaleType="centerCrop" />
+
+<!-- Informações do Imóvel -->
+    <LinearLayout
+        android:id="@+id/propertyInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Foto do Imóvel -->
+        <TextView
+            android:id="@+id/rvIdImovel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/imgFoto"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:scaleType="centerCrop" />
+
+        <!-- Preço -->
+        <TextView
+            android:id="@+id/textPreco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoText="false"
+            android:background="@drawable/textview_border"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="8dp"
+            android:text="Preço: R$"
+            android:textSize="18sp" />
+
+        <!-- Área -->
+        <TextView
+            android:id="@+id/textArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview_border"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="8dp"
+            android:text="Área:  m²"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <!-- Descrição -->
+
+        <!-- Localização: Cidade, Bairro, CEP, Número -->
+
+        <!-- Quantidade de Quartos, Banheiros, Vaga de Garagem -->
+
+        <!-- IPTU -->
+
+        <!-- Sustentabilidade -->
+    </LinearLayout>
+
+<!-- Botões de Perfil e Filtro -->
+<LinearLayout
+    android:id="@+id/profileFilterLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"/>
+
+</RelativeLayout>

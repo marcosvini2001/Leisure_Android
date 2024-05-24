@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#A7A4A4"
+    tools:context=".view.DetalheImovel">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pagerMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="5dp"
+        android:translationZ="10dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardElevation="5dp"
+        android:foreground="?android:attr/selectableItemBackground" />
+
+    <!-- Banners promocionais -->
+    <ImageView
+        android:id="@+id/bannerPromotion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp"
+        android:scaleType="centerCrop"
+        android:foreground="?android:attr/selectableItemBackground" />
+
+    <!-- Informações do Imóvel -->
+    <LinearLayout
+        android:id="@+id/propertyInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bannerPromotion"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <!-- Foto do Imóvel -->
+        <ImageView
+            android:id="@+id/imgFoto"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop"
+            android:foreground="?android:attr/selectableItemBackground" />
+
+        <!-- Preço -->
+        <TextView
+            android:id="@+id/textPreco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@drawable/textview_border"
+            android:text="Preço: R$"
+            android:textSize="18sp"
+            android:foreground="?android:attr/selectableItemBackground" />
+
+        <!-- Área -->
+        <TextView
+            android:id="@+id/textArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@drawable/textview_border"
+            android:text="Área:  m²"
+            android:foreground="?android:attr/selectableItemBackground" />
+
+        <!-- Descrição -->
+        <TextView
+            android:id="@+id/textDescricao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@drawable/textview_border"
+            android:text="Descrição:"
+            android:foreground="?android:attr/selectableItemBackground" />
+
+        <!-- Localização: Cidade, Bairro, CEP, Número -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/textview_border"
+            android:padding="8dp">
+
+
+            <TextView
+                android:id="@+id/textCidade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+
+                android:text="Cidade:"
+                android:foreground="?android:attr/selectableItemBackground" />
+
+            <TextView
+                android:id="@+id/textBairro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Bairro:"
+                android:foreground="?android:attr/selectableItemBackground" />
+
+            <TextView
+                android:id="@+id/textCep"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="CEP:"
+                android:foreground="?android:attr/selectableItemBackground" />
+
+            <TextView
+                android:id="@+id/textNumero"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Número:"
+                android:foreground="?android:attr/selectableItemBackground" />
+        </LinearLayout>
+
+        <!-- Quantidade de Quartos, Banheiros, Vaga de Garagem -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/textview_border"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/textQuarto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Quartos: "
+                android:foreground="?android:attr/selectableItemBackground" />
+
+            <TextView
+                android:id="@+id/textBanheiro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Banheiros: "
+                android:foreground="?android:attr/selectableItemBackground" />
+
+            <TextView
+                android:id="@+id/textVaga"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:text="Vaga: " />
+        </LinearLayout>
+
+        <!-- IPTU -->
+        <TextView
+            android:id="@+id/textIptu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@drawable/textview_border"
+            android:text="IPTU: R$"
+            android:foreground="?android:attr/selectableItemBackground" />
+
+        <!-- Sustentabilidade -->
+        <TextView
+            android:id="@+id/textSustentabilidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@drawable/textview_border"
+            android:text="Sustentabilidade:"
+            android:foreground="?android:attr/selectableItemBackground" />
+    </LinearLayout>
+
+    <!-- Botões de Perfil e Filtro -->
+    <LinearLayout
+        android:id="@+id/profileFilterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!-- Botão Perfil -->
+        <Button
+            android:id="@+id/btnProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="#AAA7A7"
+            android:text="Perfil" />
+
+        <!-- Botão Filtro -->
+        <Button
+            android:id="@+id/btnFilter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:backgroundTint="#A7A4A4"
+            android:text="Filtro" />
+
+    </LinearLayout>
+
+</RelativeLayout>
