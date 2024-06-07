@@ -27,35 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:gravity="center_vertical"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <!-- Botão Perfil -->
-        <Button
-            android:id="@+id/btnProfile"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            android:textColor="#FFFFFF"
-
-            android:backgroundTint="#AAA7A7"
-            android:text="Perfil" />
-
-        <!-- Botão Filtro -->
-        <Button
-            android:id="@+id/btnFilter"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_weight="1"
-            android:textColor="#FFFFFF"
-
-            android:backgroundTint="#A7A4A4"
-            android:text="Filtro" />
-
-    </LinearLayout>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <!-- Banners promocionais -->
 

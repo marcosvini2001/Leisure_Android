@@ -16,6 +16,9 @@ public class ImovelModel {
     private String  num_residencia;
     private String qtde_quarto;
     private String qtde_banheiro;
+
+    private String Iptu;
+
     private String qtde_vaga_garagem;
     private String sustentabilidade;
 
@@ -113,6 +116,14 @@ public class ImovelModel {
 
     public void setQtde_vaga_garagem(String qtde_vaga_garagem) {
         this.qtde_vaga_garagem = qtde_vaga_garagem;
+    }
+
+    public String getIptu() {
+        return Iptu;
+    }
+
+    public void setIptu(String Iptu) {
+        this.Iptu = Iptu;
     }
 
     public String getSustentabilidade() {

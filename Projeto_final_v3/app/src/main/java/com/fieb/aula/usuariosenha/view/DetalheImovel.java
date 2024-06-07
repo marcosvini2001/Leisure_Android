@@ -82,10 +82,13 @@ public class DetalheImovel extends AppCompatActivity {
         tvCep.setText(imovel.getCep());
         tvNum.setText(imovel.getNum_residencia());
         tvQuarto.setText(imovel.getQtde_quarto());
+        tvIptu.setText(imovel.getIptu());
         tvBanheiro.setText(imovel.getQtde_banheiro());
         tvVaga.setText(imovel.getQtde_vaga_garagem());
 
         tvSustentabilidade.setText(imovel.getSustentabilidade());
+
+
 
 
         // Preencha os outros campos conforme necessário

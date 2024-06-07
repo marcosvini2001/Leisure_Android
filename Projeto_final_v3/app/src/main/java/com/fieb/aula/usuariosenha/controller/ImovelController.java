@@ -25,7 +25,7 @@ public class ImovelController {
 
             Statement stm = ConexaoSqlSever.conectar(meuContexto).createStatement();
 
-            ResultSet rs = stm.executeQuery("SELECT id, preco, area, descricao, cidade, bairro, cep, num_residencia, qtde_quarto, qtde_banheiro, qtde_vaga_garagem, sustentabilidade, nome_imagem FROM imovel WHERE id = " + id);
+            ResultSet rs = stm.executeQuery("SELECT id, preco, area, descricao, cidade, bairro, cep, num_residencia, qtde_quarto, qtde_banheiro, qtde_vaga_garagem, iptu, sustentabilidade, nome_imagem FROM imovel WHERE id = " + id);
 
 //            ResultSet rs = stm.executeQuery("Select id,preco,descricao,cidade,bairro,cep, num_residencia,qtde_quarto,qtde_banheiro,qtde_vaga_garagem,area,sustentabilidade,nome_imagem from imovel where id="+id);
 
@@ -42,7 +42,7 @@ public class ImovelController {
                 imovelModel.setPreco(Auxiliares.formatarNumero(rs.getString(2)));
                 imovelModel.setArea("Área: "+rs.getString(3) +" m²");
                 imovelModel.setDescricao("Descrição: "+rs.getString(4));
-                imovelModel.setNome_imagem(rs.getString(13));
+                imovelModel.setNome_imagem(rs.getString(14));
 
                 imovelModel.setCidade("Cidade: "+rs.getString(5));
                 imovelModel.setBairro("Bairro: "+rs.getString(6));
@@ -51,7 +51,8 @@ public class ImovelController {
                 imovelModel.setQtde_quarto("Qtde Quartos: "+rs.getString(9));
                 imovelModel.setQtde_banheiro("Qtde Banheiro: "+rs.getString(10));
                 imovelModel.setQtde_vaga_garagem("Vaga Garagem: "+rs.getString(11));
-                imovelModel.setSustentabilidade("Sustentabilidade: "+rs.getString(12));
+                imovelModel.setIptu("IPTU: R$ "+rs.getString(12));
+                imovelModel.setSustentabilidade("Sustentabilidade: "+rs.getString(13));
 
                 list.add(imovelModel);
                 //valor = Auxiliares.formatarNumero(rvTextPreco.getText().toString());
