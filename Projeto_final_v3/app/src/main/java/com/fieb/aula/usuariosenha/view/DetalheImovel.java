@@ -75,7 +75,9 @@ public class DetalheImovel extends AppCompatActivity {
 
 //        int idImagem = getResources().getIdentifier(imovel.getNome_imagem(),"drawable",contexto.getPackageName());
 //        imgFoto.setImageResource(idImagem);
-        String imageUrl = "https://suntech.eco.br/api/uploads/fotoImovel56.png";
+
+
+        String imageUrl = urlBase+"fotoImovel"+idImovel+".png";
         Glide.with(this)
                 .load(imageUrl)
                 .into(imgFoto);
