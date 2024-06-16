@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import com.bumptech.glide.Glide;
 import com.fieb.aula.usuariosenha.R;
 import com.fieb.aula.usuariosenha.controller.PedidoController;
 import com.fieb.aula.usuariosenha.model.PedidoModel;
@@ -34,6 +35,8 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.ViewHolder
     PedidoController pedidoController;
 
     String valor="";
+
+    private String urlBase = "https://suntech.eco.br/api/uploads/";
 
     public PedidoAdapter(List<PedidoModel> pedido, Context context) {
         listPedido = pedido;
@@ -64,10 +67,16 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.ViewHolder
 
 
 
-      Resources resources = aContext.getResources();
-      int idR = resources.getIdentifier(objLinha.getNome_imagem(), "drawable", aContext.getPackageName());
-      ImageView tvImagemBolo = holder.rvImgFoto;
-      tvImagemBolo.setImageResource(idR);
+//      Resources resources = aContext.getResources();
+//      int idR = resources.getIdentifier(objLinha.getNome_imagem(), "drawable", aContext.getPackageName());
+//      ImageView tvImagemBolo = holder.rvImgFoto;
+//      tvImagemBolo.setImageResource(idR);
+
+        ImageView tvImagemImovel = holder.rvImgFoto;
+        String urlImagem = urlBase+"fotoImovel"+objLinha.getId()+".png";
+        Glide.with(holder.itemView.getContext())
+                .load(urlImagem)
+                .into(tvImagemImovel);
 
 //        =====================================
 
