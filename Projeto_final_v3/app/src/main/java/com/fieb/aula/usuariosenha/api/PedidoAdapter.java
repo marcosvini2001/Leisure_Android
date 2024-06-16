@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,7 +74,9 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.ViewHolder
 //      tvImagemBolo.setImageResource(idR);
 
         ImageView tvImagemImovel = holder.rvImgFoto;
-        String urlImagem = urlBase+"fotoImovel"+objLinha.getId()+".png";
+      //  String urlImagem = urlBase+"fotoImovel"+objLinha.getId()+".png";
+        String urlImagem = objLinha.getCaminho_imagem();
+
         Glide.with(holder.itemView.getContext())
                 .load(urlImagem)
                 .into(tvImagemImovel);

@@ -6,7 +6,15 @@ public class PedidoModel {
     private String area;
     private String preco;
     private String id;
+    private String caminho_imagem;
 
+    public String getCaminho_imagem() {
+        return caminho_imagem;
+    }
+
+    public void setCaminho_imagem(String caminho_imagem) {
+        this.caminho_imagem = caminho_imagem;
+    }
 
     public String getId() {
         return id;

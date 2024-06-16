@@ -76,10 +76,10 @@ public class DetalheImovel extends AppCompatActivity {
 //        int idImagem = getResources().getIdentifier(imovel.getNome_imagem(),"drawable",contexto.getPackageName());
 //        imgFoto.setImageResource(idImagem);
 
-
-        String imageUrl = urlBase+"fotoImovel"+idImovel+".png";
+        String urlImagem = imovel.getCaminho_imagem();
+       // String imageUrl = urlBase+"fotoImovel"+idImovel+".png";
         Glide.with(this)
-                .load(imageUrl)
+                .load(urlImagem)
                 .into(imgFoto);
 
         // Define os valores dos campos com os dados do imóvel
