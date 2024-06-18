@@ -6,6 +6,8 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 import com.fieb.aula.usuariosenha.R;
 import com.fieb.aula.usuariosenha.controller.ImovelController;
 import com.fieb.aula.usuariosenha.model.ImovelModel;
@@ -19,7 +21,7 @@ public class DetalheImovel extends AppCompatActivity {
     List<ImovelModel> imoveis;
 
     public Context aContext;
-
+    private String urlBase = "https://suntech.eco.br/api/uploads/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,8 +73,15 @@ public class DetalheImovel extends AppCompatActivity {
 
         //int idImagem = getResources().getIdentifier("decoracao_minimalista_apartamento", "drawable", contexto.getPackageName());
 
-        int idImagem = getResources().getIdentifier(imovel.getNome_imagem(),"drawable",contexto.getPackageName());
-        imgFoto.setImageResource(idImagem);
+//        int idImagem = getResources().getIdentifier(imovel.getNome_imagem(),"drawable",contexto.getPackageName());
+//        imgFoto.setImageResource(idImagem);
+
+        String urlImagem = imovel.getCaminho_imagem();
+       // String imageUrl = urlBase+"fotoImovel"+idImovel+".png";
+        Glide.with(this)
+                .load(urlImagem)
+                .into(imgFoto);
+
         // Define os valores dos campos com os dados do imóvel
         tvPreco.setText(imovel.getPreco());
         tvArea.setText(imovel.getArea());

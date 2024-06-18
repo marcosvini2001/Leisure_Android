@@ -1,6 +1,7 @@
 package com.fieb.aula.usuariosenha.controller;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.fieb.aula.usuariosenha.api.Auxiliares;
 import com.fieb.aula.usuariosenha.api.ConexaoSqlSever;
@@ -25,8 +26,21 @@ public class ImovelController {
 
             Statement stm = ConexaoSqlSever.conectar(meuContexto).createStatement();
 
-            ResultSet rs = stm.executeQuery("SELECT id, preco, area, descricao, cidade, bairro, cep, num_residencia, qtde_quarto, qtde_banheiro, qtde_vaga_garagem, iptu, sustentabilidade, nome_imagem FROM imovel WHERE id = " + id);
-
+// FUNCIONA           ResultSet rs = stm.executeQuery("SELECT id, preco, area, descricao, cidade, bairro, cep, num_residencia, qtde_quarto, qtde_banheiro, qtde_vaga_garagem, iptu, sustentabilidade, nome_imagem FROM imovel WHERE id = " + id);
+            ResultSet rs = stm.executeQuery("SELECT id, " +
+                    "preco, " +
+                    "area, " +
+                    "descricao, " +
+                    "cidade, " +
+                    "bairro, " +
+                    "cep, " +
+                    "num_residencia, " +
+                    "qtde_quarto, " +
+                    "qtde_banheiro," +
+                    " qtde_vaga_garagem, " +
+                    "iptu, sustentabilidade, " +
+                    "nome_imagem," +
+                    "caminho_imagem FROM imovel WHERE id = " + id);
 //            ResultSet rs = stm.executeQuery("Select id,preco,descricao,cidade,bairro,cep, num_residencia,qtde_quarto,qtde_banheiro,qtde_vaga_garagem,area,sustentabilidade,nome_imagem from imovel where id="+id);
 
             //ContentValues dados = new ContentValues();
@@ -53,6 +67,7 @@ public class ImovelController {
                 imovelModel.setQtde_vaga_garagem("Vaga Garagem: "+rs.getString(11));
                 imovelModel.setIptu("IPTU: R$ "+rs.getString(12));
                 imovelModel.setSustentabilidade("Sustentabilidade: "+rs.getString(13));
+                imovelModel.setCaminho_imagem(rs.getString(15));
 
                 list.add(imovelModel);
                 //valor = Auxiliares.formatarNumero(rvTextPreco.getText().toString());

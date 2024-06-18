@@ -101,7 +101,8 @@ public class PedidoController {
 
             Statement stm = ConexaoSqlSever.conectar(context).createStatement();
 
-            ResultSet rs = stm.executeQuery("Select id,preco,area,nome_imagem from imovel");
+          //ANTIGO  ResultSet rs = stm.executeQuery("Select id,preco,area,nome_imagem from imovel");
+            ResultSet rs = stm.executeQuery("Select id,preco,area,nome_imagem,caminho_imagem from imovel");
 
             //ContentValues dados = new ContentValues();
 
@@ -116,6 +117,7 @@ public class PedidoController {
                 pedidoModel.setPreco(Auxiliares.formatarNumero(rs.getString(2)));
                 pedidoModel.setArea("Área: "+rs.getString(3) +" m²");
                 pedidoModel.setNome_imagem(rs.getString(4));
+                pedidoModel.setCaminho_imagem(rs.getString(5));
 
                 list.add(pedidoModel);
                 //valor = Auxiliares.formatarNumero(rvTextPreco.getText().toString());

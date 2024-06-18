@@ -21,6 +21,15 @@ public class ImovelModel {
 
     private String qtde_vaga_garagem;
     private String sustentabilidade;
+    private String caminho_imagem;
+
+    public String getCaminho_imagem() {
+        return caminho_imagem;
+    }
+
+    public void setCaminho_imagem(String caminho_imagem) {
+        this.caminho_imagem = caminho_imagem;
+    }
 
     public String getNome_imagem() {
         return nome_imagem;
